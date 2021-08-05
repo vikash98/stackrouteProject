@@ -1,0 +1,39 @@
+<style>
+  a:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+  }
+  tr:hover {
+    background-color: rgb(139, 143, 199);
+}
+
+tr:hover td {
+    background-color: transparent; /* or #000 */
+}
+</style>
+<div class="container">  
+    
+  <h1 TOURNAMENTS TOURNAMENTS  style="background-color:powderblue;"> TOURNAMENTS </h1>  
+    
+  <table class="table table-striped">  
+    <thead>  
+        <tr>  
+          <th>ID</th>  
+          <th>Type</th>  
+          <th>CreatedAt</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+      <tr *ngFor="let tournament of departmentList  let i = index;" (click)="showMatches($event, tournament)" >  
+        <td>{{ tournament.id }}</td>  
+        <td>{{ tournament.type }}</td>  
+        <td>{{ tournament.attributes.createdAt}}</td>      
+        <td><a   (click)="addToFav(tournament.id)" >View Details</a></td><td></td>
+      </tr>  
+    </tbody>  
+  </table>  
+</div>  
+
+  

@@ -1,0 +1,26 @@
+<style>
+
+  a:hover{
+    text-decoration: none;
+    background-color: none;
+    cursor: pointer;
+  }
+</style>
+<div class="container">  
+  <h1  style="background-color:powderblue; color:#F2A90;"> Match Details </h1>  
+  <table class="table table-striped">  
+    <thead>  
+        <tr> 
+          <th>Match type</th>  
+          <th>Match id</th>
+        </tr>  
+    </thead>  
+    <tbody>  
+      <tr *ngFor="let match of matchedData.relationships.matches.data  let i = index;" (click)="saveFav(match)">    
+        <td>{{ match.type}}</td>      
+        <td>{{ match.id}}</td>      
+        <td><a class="link"  (click)="addToFav(department.id)" >Favourite</a></td>
+      </tr>  
+    </tbody>  
+  </table>  
+</div>  

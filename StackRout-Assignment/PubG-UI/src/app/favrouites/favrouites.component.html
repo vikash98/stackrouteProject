@@ -1,0 +1,38 @@
+<style>
+  a:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+  }
+  tr:hover {
+    background-color: rgb(139, 143, 199);
+}
+
+tr:hover td {
+    background-color: transparent; /* or #000 */
+}
+</style>
+<div class="container">  
+    
+  <h1 style="background-color:powderblue;"> Your favourite matches </h1>  
+    
+  <table class="table table-striped">  
+    <thead>  
+        <tr>  
+          <th>User ID</th>  
+          <th>Favourite Code</th>  
+  
+        </tr>  
+    </thead>  
+    <tbody>  
+      <tr *ngFor="let matches of favList  let i = index;" >  
+        <td>{{ matches.userId }}</td>  
+        <td>{{ matches.matchCode }}</td>      
+        <td><a   (click)="deleteMatch(matches.id)" >Delete</a></td><td></td>
+      </tr>  
+    </tbody>  
+  </table>  
+</div>  
+
+  
